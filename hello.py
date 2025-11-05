@@ -14,7 +14,7 @@ API_TOKEN = "2597522b3emsh0cabcabdff55152p12fa39jsn13dfaadadc0e"
 GOOGLE_NEWS_API_URL = "https://google-news22.p.rapidapi.com/v1"
 
 @app.route("/")
-def hello_world():
+def helo_world():
 
     tokenHeader = request.headers['Token']
     app.logger.info("the token is "+tokenHeader)
