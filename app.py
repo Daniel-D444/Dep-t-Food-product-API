@@ -115,7 +115,7 @@ def search_keyword():
     if not keyword:
         return jsonify([])
 
-    # 1️⃣ Rechercher sur OpenFoodFacts
+    # Rechercher sur OpenFoodFacts
     off_res = requests.get(
         "https://world.openfoodfacts.org/cgi/search.pl",
         params={"search_terms": keyword, "search_simple":1, "action":"process", "json":1}
@@ -127,7 +127,7 @@ def search_keyword():
         barcode = item.get("code")
         if not barcode:
             continue
-        # 2️⃣ Appeler l'API actuelle avec le code-barres
+        # Appeler l'API actuelle avec le code-barres
         api_res = requests.get(
             f"{API_BASE}/product/{barcode}",
             headers={"x-rapidapi-key": API_KEY, "x-rapidapi-host": API_HOST}
